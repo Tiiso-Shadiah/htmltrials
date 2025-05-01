@@ -1,0 +1,62 @@
+  <!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        a{text-decoration: none;}
+        body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        input, select {width: 100%; height: 40px; margin: 15px;}
+        label{margin: 15px;}
+    </style>
+</head>
+<body>
+    <center>
+        <h1>ISLAMIC UNIVERSITY STUDENTS UNION</h1>
+        <h4>Your Student Government</h4>
+        <iframe src="nav.html" width="100%" height="50px" frameborder="0"></iframe>
+    <form name="regform" onsubmit="SubmitForm()" method="post"> 
+        <table border="0" width="100%">                              
+            <tr>
+                <td><label>First Name</label><input type="text" name="fnm"></td>
+                <td><label>Surname</label><input type="text" name="snm"></td>
+            </tr>
+            <tr>
+                <td><label>Phone No</label><input type="text" name="ph"></td>
+                <td><label>Email</label><input type="text" name="em"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label>Course</label><input type="text" name="cor"></td>
+            </tr>
+            <tr>
+                <td><label>Session</label><input type="text" name="sn"></td>
+                <td><label>Entry Year</label><input type="text" name="ey"></td>
+            </tr>
+            <tr>
+                <td><label>Sex</label><select><option></option><option>MALE</option><option>FEMALE</option></select></td>
+                <td><label>Nationality</label><select><option></option><option>UGANDAN</option><option>KENYAN</option><option>TANZANIAN</option><option>RWANDAN</option><option>OTHERS</option></select></td>
+            </tr> 
+            <tr>
+                <td><input type="submit" value="SUBMIT"></td>
+                <td><input type="submit" value="CLEAR FORM"></td>
+            </tr>         
+        </table>
+    </form>  
+    <script>
+        function SubmitForm()
+        {
+            let f_name=document.forms["regform"]["fnm"].value;
+            let s_name=document.forms["regform"]["snm"].value;
+            if(f_name=="") 
+            {
+                alert("Please enter the first name");
+            }
+            else
+            {
+                alert("Submission complete");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Car Tax Calculator</title>
+        <style>
+            body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            input, select{width: 100%; height: 45px;}
+        </style>
+    </head>
+    <body>
+    <form name="car_data">
+        <label>Car Name</label>
+        <select name="txt_make">
+            <option></option>
+            <option>Toyota</option>
+            <option>BMW</option>
+            <option>Benz</option>
+        </select>
+        <label>Production year</label>
+        <select name="txt_year">
+            <option></option>
+            <option>2010</option>
+            <option>2016</option>
+            <option>2020</option>
+        </select>
+        <label>Purchase Price</label>
+        <input type="number" name="txt_Price">
+        <hr />
+        <input type="button" value="Compute Tax" onclick="ProcessTax()">
+        <label>Tax Computed</label>
+        <input type="number" name="txt_tax_amount">      
+    </form>
+    <script>
+        function ProcessTax(){
+            let purchase = Number(document.forms["car_data"]["txt_Price"].value);
+            let year = Number(document.forms["car_data"]["txt_year"].value);
+            let make = document.forms["car_data"]["txt_make"].value;
+            let tax = 0;
+  
+        if (make === "Toyota" && year < 2015) {
+            tax = 10000 + (0.20 * purchase);
+        } 
+        else{
+             tax = 0.30 * purchase;
+            }
+        document.forms["car_data"]["txt_tax_amount"].value = tax;
+        }
+    </script>
+    </body>
+</html>    

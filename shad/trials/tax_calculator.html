@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title> Tax Calculator</title>
+        <style>
+            body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            input, select{width: 100%; height: 45px;}
+        </style>
+    </head>
+    <body>
+        <form name="tax_data">
+            <label>Tax Name</label>
+            <select name="txt_tax">
+                <option></option>
+                <option>Income Tax</option>
+                <option>PAYE</option>
+            </select>
+            <label>Gross Earning</label>
+            <input type="number" name="txt_amount">
+            <hr />
+            <input type="button" value="Compute Tax" onclick="ProcessTax()">
+            <label>Tax Computed</label>
+            <input type="number" name="txt_tax_amount">
+            
+        </form>
+        <script>
+            function IncomeTax()
+            {
+                let gross =Number(document.forms["tax_data"]["txt_amount"].value);
+                let tax=gross*0.18;
+                document.forms["tax_data"]["txt_tax_amount"].value = tax;
+            }
+            function PayeTax()
+            {
+                let gross =Number(document.forms["tax_data"]["txt_amount"].value);
+                let tax=5000+(gross*0.3);
+                document.forms["tax_data"]["txt_tax_amount"].value = tax;
+            }
+            function ProcessTax()
+            {
+                let tax_name=document.forms["tax_data"]["txt_tax"].value;
+                if (tax_name== "PAYE"){
+                    PayeTax();
+                }
+                else{
+                    IncomeTax();
+                }   
+            }
+        </script>
+    </body>
+</html>
